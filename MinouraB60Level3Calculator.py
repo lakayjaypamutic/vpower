@@ -1,6 +1,5 @@
 from AbstractPowerCalculator import AbstractPowerCalculator
 
-
 class MinouraB60Level3Calculator(AbstractPowerCalculator):
     def __init__(self):
         super(MinouraB60Level3Calculator, self).__init__()
@@ -15,8 +14,7 @@ class MinouraB60Level3Calculator(AbstractPowerCalculator):
     D = 3.233333
 
     # Derived Minoura Power Curve from http://www.powercurvesensor.com/cycling-trainer-power-curves/
-    # This is a 3rd order polynomial, where
-    # Power = A * v ^ 3 + B * v ^ 2 + C * v + d
+    # 3rd order polynomial, where Power = A * v ^ 3 + B * v ^ 2 + C * v + d
     # where v is speed in km/hour and constants A, B, C & D are as defined above.
     def power_from_speed(self, revs_per_sec):
         if self._DEBUG: print "power_from_speed"
