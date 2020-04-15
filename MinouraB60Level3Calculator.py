@@ -19,7 +19,7 @@ class MinouraB60Level3Calculator(AbstractPowerCalculator):
     def power_from_speed(self, revs_per_sec):
         if self._DEBUG: print "power_from_speed"
 
-        km_per_rev = self.wheel_circumference 
+        km_per_rev = self.wheel_circumference / 1000
         kph = revs_per_sec * 3600 * km_per_rev
         power = self.correction_factor * (self.A * kph * kph * kph +
                                           self.B * kph * kph +
